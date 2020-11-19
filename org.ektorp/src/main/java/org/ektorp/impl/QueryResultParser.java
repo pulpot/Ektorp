@@ -72,7 +72,7 @@ public class QueryResultParser<T> {
         while (jp.nextValue() != JsonToken.END_OBJECT) {
             String currentName = jp.getCurrentName();
             if (OFFSET_FIELD_NAME.equals(currentName)) {
-                offset = jp.getLongValue();
+                offset = jp.getValueAsLong();
             } else if (TOTAL_ROWS_FIELD_NAME.equals(currentName)) {
                 totalRows = jp.getIntValue();
             } else if (ROWS_FIELD_NAME.equals(currentName)) {
